@@ -10,18 +10,18 @@ Open `index.html` and edit the `CONFIG` object near the bottom of the file:
 
 ```js
 const CONFIG = {
-  ZOOM_URL: "https://us06web.zoom.us/webinar/register/YOUR_WEBINAR_ID",
+  MEET_URL: "https://meet.google.com/sap-rwmg-vym",
   WEEKDAY: 3,          // 0=Sun 1=Mon 2=Tue 3=Wed 4=Thu 5=Fri 6=Sat
   WEEK_OF_MONTH: 1,    // 1=first, 2=second, 3=third, 4=fourth
-  HOUR: 18,            // 24-hour, in TIMEZONE below
+  HOUR: 19,            // 24-hour, in TIMEZONE below
   MINUTE: 0,
   TIMEZONE: "America/Denver",
   TIMEZONE_LABEL: "Mountain Time",
-  DURATION_MINUTES: 75,
+  DURATION_MINUTES: 60,
 };
 ```
 
-- **ZOOM_URL** — Replace with your Zoom Webinar registration link. Zoom handles signup, confirmations, and reminders.
+- **MEET_URL** — Your Google Meet link. All CTA buttons point here.
 - **Schedule fields** — The page auto-calculates the next session date from these. It rolls forward each month and handles year boundaries. No manual date updates needed.
 
 ### 2. Deploy to Netlify

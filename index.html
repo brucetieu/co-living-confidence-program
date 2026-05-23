@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Co-Living Operator Confidence Program — Free Workshop</title>
-  <meta name="description" content="Free 75-minute live workshop: Learn the 3 systems that fill co-living rooms in 30 days. For W2 earners who want to operate without quitting their day job.">
+  <meta name="description" content="Free 60-minute live workshop: Learn the 3 systems that fill co-living rooms in 30 days. For W2 earners who want to operate without quitting their day job.">
   <meta property="og:title" content="The Co-Living Operator Confidence Program — Free Workshop">
-  <meta property="og:description" content="Free 75-min workshop: 3 proven systems to fill your co-living rooms in 30 days.">
+  <meta property="og:description" content="Free 60-min workshop: 3 proven systems to fill your co-living rooms in 30 days.">
   <meta property="og:type" content="website">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%2300e0c8'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -493,13 +493,13 @@
   <section class="hero" id="hero">
     <div class="container hero-grid">
       <div class="hero-content">
-        <span class="label hero-label">Free Live Workshop &middot; Every Month</span>
+        <span class="label hero-label">Free Live Workshop &middot; Monthly on Google Meet</span>
         <h1>
           Fill Your Co-Living Rooms<br>in 30 Days.
           <span class="accent-line">Systems-first. No landlord hustle.</span>
         </h1>
         <p class="hero-desc">
-          A free 75-minute live workshop for W2 earners &mdash; engineers, finance, healthcare &mdash; who want to build profitable co-living without quitting their day job. Learn the three named systems I used to fill 25+ rooms in Denver while working full-time as a software engineer.
+          A free 60-minute live workshop for W2 earners &mdash; engineers, finance, healthcare &mdash; who want to build profitable co-living without quitting their day job. Learn the three named systems I used to fill 25+ rooms in Denver while working full-time as a software engineer.
         </p>
       </div>
       <div class="reg-card" id="hero-card">
@@ -526,7 +526,7 @@
           <span class="stat-label">While W2 Employed</span>
         </div>
         <div class="reveal reveal-d2">
-          <span class="stat-value">75</span>
+          <span class="stat-value">60</span>
           <span class="stat-label">Minutes, No Fluff</span>
         </div>
         <div class="reveal reveal-d3">
@@ -658,19 +658,18 @@
 // ╚══════════════════════════════════════════════════════════════════╝
 
 const CONFIG = {
-  // ── Zoom Registration ─────────────────────────────────────────
-  // Replace with your Zoom Webinar registration URL.
-  // Zoom handles signup, email confirmations, and reminders.
-  ZOOM_URL: "https://us06web.zoom.us/webinar/register/REPLACE_WITH_YOUR_WEBINAR_ID",
+  // ── Google Meet Link ───────────────────────────────────────────
+  // The "Reserve My Seat" buttons link directly to this URL.
+  MEET_URL: "https://meet.google.com/sap-rwmg-vym",
 
   // ── Recurring Schedule ────────────────────────────────────────
   WEEKDAY: 3,            // 0=Sun 1=Mon 2=Tue 3=Wed 4=Thu 5=Fri 6=Sat
   WEEK_OF_MONTH: 1,      // 1=first, 2=second, 3=third, 4=fourth
-  HOUR: 18,              // 24-hour format, in TIMEZONE below
+  HOUR: 19,              // 24-hour format, in TIMEZONE below
   MINUTE: 0,
   TIMEZONE: "America/Denver",
   TIMEZONE_LABEL: "Mountain Time",
-  DURATION_MINUTES: 75,
+  DURATION_MINUTES: 60,
 };
 
 // ═══ Date Calculation ═══════════════════════════════════════════
@@ -732,7 +731,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var dateStr = session.toLocaleDateString("en-US", {
     weekday: "long", month: "long", day: "numeric", year: "numeric"
   });
-  var timeStr = formatTime(CONFIG.HOUR, CONFIG.MINUTE) + " " + CONFIG.TIMEZONE_LABEL + " · Zoom · " + CONFIG.DURATION_MINUTES + " min";
+  var timeStr = formatTime(CONFIG.HOUR, CONFIG.MINUTE) + " " + CONFIG.TIMEZONE_LABEL + " · Google Meet · " + CONFIG.DURATION_MINUTES + " min";
   var days = getDaysUntil(session);
   var countdownStr = formatCountdown(days);
 
@@ -745,7 +744,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("footer-year").textContent = new Date().getFullYear();
 
   document.querySelectorAll(".register-link").forEach(function (el) {
-    el.href = CONFIG.ZOOM_URL;
+    el.href = CONFIG.MEET_URL;
   });
 
   // ── Scroll Reveal ───────────────────────────────────────────
