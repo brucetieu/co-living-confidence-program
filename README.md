@@ -10,7 +10,7 @@ Open `index.html` and edit the `CONFIG` object near the bottom of the file:
 
 ```js
 const CONFIG = {
-  MEET_URL: "https://meet.google.com/sap-rwmg-vym",
+  REGISTRATION_URL: "https://lu.ma/aj3cajlz",
   WEEKDAY: 3,          // 0=Sun 1=Mon 2=Tue 3=Wed 4=Thu 5=Fri 6=Sat
   WEEK_OF_MONTH: 1,    // 1=first, 2=second, 3=third, 4=fourth
   HOUR: 19,            // 24-hour, in TIMEZONE below
@@ -21,7 +21,7 @@ const CONFIG = {
 };
 ```
 
-- **MEET_URL** — Your Google Meet link. All CTA buttons point here.
+- **REGISTRATION_URL** — Your Lu.ma event page. All CTA buttons point here. Lu.ma handles signup, calendar invites, and reminders.
 - **Schedule fields** — The page auto-calculates the next session date from these. It rolls forward each month and handles year boundaries. No manual date updates needed.
 
 ### 2. Deploy to Netlify

@@ -658,9 +658,10 @@
 // ╚══════════════════════════════════════════════════════════════════╝
 
 const CONFIG = {
-  // ── Google Meet Link ───────────────────────────────────────────
-  // The "Reserve My Seat" buttons link directly to this URL.
-  MEET_URL: "https://meet.google.com/sap-rwmg-vym",
+  // ── Registration Link ──────────────────────────────────────────
+  // The "Reserve My Seat" buttons link to this URL.
+  // Lu.ma handles signup, calendar invites, and reminders.
+  REGISTRATION_URL: "https://lu.ma/aj3cajlz",
 
   // ── Recurring Schedule ────────────────────────────────────────
   WEEKDAY: 3,            // 0=Sun 1=Mon 2=Tue 3=Wed 4=Thu 5=Fri 6=Sat
@@ -744,7 +745,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("footer-year").textContent = new Date().getFullYear();
 
   document.querySelectorAll(".register-link").forEach(function (el) {
-    el.href = CONFIG.MEET_URL;
+    el.href = CONFIG.REGISTRATION_URL;
   });
 
   // ── Scroll Reveal ───────────────────────────────────────────
