@@ -1,0 +1,39 @@
+# ── Netlify Configuration ─────────────────────────────────────────
+# Static site — no build step. Netlify serves files directly.
+
+[build]
+  publish = "."
+
+# ── Security Headers ─────────────────────────────────────────────
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy = "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self';"
+
+# ── Cache Control ────────────────────────────────────────────────
+# HTML is never cached so edits go live instantly on deploy.
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+# ── 404 Handling ─────────────────────────────────────────────────
+# Netlify checks for real files first, then falls back to this.
+# Adding /thank-you.html (or any other page) later will work
+# without touching this config — real files always take priority.
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404

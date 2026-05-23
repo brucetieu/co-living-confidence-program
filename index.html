@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Co-Living Operator Confidence Program — Free Workshop</title>
+  <meta name="description" content="Free 75-minute live workshop: Learn the 3 systems that fill co-living rooms in 30 days. For W2 earners who want to operate without quitting their day job.">
+  <meta property="og:title" content="The Co-Living Operator Confidence Program — Free Workshop">
+  <meta property="og:description" content="Free 75-min workshop: 3 proven systems to fill your co-living rooms in 30 days.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%2300e0c8'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ═══ Reset & Variables ═══════════════════════════════════════ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #08090d;
+      --surface: #0d0f15;
+      --card: #12141c;
+      --border: #1a1d2a;
+      --border-accent: rgba(0, 224, 200, 0.18);
+      --accent: #00e0c8;
+      --accent-bright: #00f5d8;
+      --accent-glow: rgba(0, 224, 200, 0.08);
+      --text: #e2e4ea;
+      --text-sec: #8890a0;
+      --text-muted: #484e60;
+      --red: #ff4466;
+      --sans: 'Inter', -apple-system, system-ui, sans-serif;
+      --mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 1.0625rem;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ═══ Grid Texture ════════════════════════════════════════════ */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0, 224, 200, 0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 224, 200, 0.018) 1px, transparent 1px);
+      background-size: 52px 52px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ═══ Layout ══════════════════════════════════════════════════ */
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 1; }
+    section { position: relative; z-index: 1; }
+    a { color: var(--accent); text-decoration: none; }
+    .mono { font-family: var(--mono); }
+    .accent { color: var(--accent); }
+    .label {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    /* ═══ Nav ═════════════════════════════════════════════════════ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1rem 0;
+      transition: background 0.3s, border-color 0.3s, backdrop-filter 0.3s;
+      border-bottom: 1px solid transparent;
+    }
+    nav.scrolled {
+      background: rgba(8, 9, 13, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom-color: var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-brand {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      color: var(--text-sec);
+      text-transform: uppercase;
+    }
+    .nav-cta {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border-accent);
+      border-radius: 6px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .nav-cta:hover {
+      background: rgba(0, 224, 200, 0.06);
+      border-color: var(--accent);
+    }
+
+    /* ═══ Hero ════════════════════════════════════════════════════ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 7rem 0 5rem;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      right: -8%;
+      top: -15%;
+      width: 55%;
+      height: 130%;
+      background: radial-gradient(ellipse at center, rgba(0, 224, 200, 0.035) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 4rem;
+      align-items: center;
+    }
+    .hero-content { position: relative; z-index: 1; }
+    .hero-label { margin-bottom: 1.5rem; }
+    .hero h1 {
+      font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 .accent-line {
+      display: block;
+      background: linear-gradient(135deg, var(--accent), #00b8f0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-desc {
+      font-size: 1.125rem;
+      color: var(--text-sec);
+      max-width: 520px;
+      line-height: 1.8;
+    }
+
+    /* ═══ Registration Card ══════════════════════════════════════ */
+    .reg-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2.25rem;
+      position: relative;
+      z-index: 1;
+      transition: border-color 0.4s, box-shadow 0.4s;
+    }
+    .reg-card:hover {
+      border-color: var(--border-accent);
+      box-shadow: 0 0 40px rgba(0, 224, 200, 0.05), 0 0 80px rgba(0, 224, 200, 0.025);
+    }
+    .reg-card .label { display: block; margin-bottom: 1rem; }
+    .reg-date {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    .reg-meta {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--text-sec);
+      margin-bottom: 0.75rem;
+    }
+    .reg-countdown {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--accent);
+      background: rgba(0, 224, 200, 0.08);
+      border: 1px solid rgba(0, 224, 200, 0.12);
+      border-radius: 100px;
+      padding: 0.3rem 0.9rem;
+      margin-bottom: 1.75rem;
+    }
+    .cta-btn {
+      display: block;
+      width: 100%;
+      padding: 1rem 1.5rem;
+      background: var(--accent);
+      color: var(--bg);
+      font-family: var(--sans);
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+      letter-spacing: 0.01em;
+    }
+    .cta-btn:hover {
+      background: var(--accent-bright);
+      box-shadow: 0 0 24px rgba(0, 224, 200, 0.3);
+      transform: translateY(-1px);
+    }
+    .cta-btn:active { transform: translateY(0); }
+    .reg-note {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 1rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* ═══ Stats Strip ════════════════════════════════════════════ */
+    .stats {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+      padding: 3rem 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      text-align: center;
+    }
+    .stat-value {
+      display: block;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .stat-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--text-sec);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* ═══ Reframe Section ════════════════════════════════════════ */
+    .reframe { padding: 7rem 0; }
+    .reframe-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+    }
+    .reframe h2 {
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+    .reframe-desc {
+      color: var(--text-sec);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    /* ═══ Systems Grid ═══════════════════════════════════════════ */
+    .systems-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .system-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2rem;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .system-card:hover {
+      border-color: var(--border-accent);
+      box-shadow: 0 0 24px rgba(0, 224, 200, 0.06);
+    }
+    .system-num {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .system-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .system-desc {
+      font-size: 0.95rem;
+      color: var(--text-sec);
+      line-height: 1.7;
+    }
+
+    /* ═══ Audience Section ═══════════════════════════════════════ */
+    .audience { padding: 5rem 0 7rem; }
+    .audience > .container > .label { display: block; text-align: center; margin-bottom: 0.75rem; }
+    .audience h2 {
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 800;
+      text-align: center;
+      letter-spacing: -0.02em;
+      margin-bottom: 3rem;
+    }
+    .audience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .audience-col {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2.25rem;
+    }
+    .audience-col h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .for-col h3 { color: var(--accent); }
+    .not-col h3 { color: var(--red); }
+    .audience-list {
+      list-style: none;
+      padding: 0;
+    }
+    .audience-list li {
+      padding: 0.7rem 0 0.7rem 1.75rem;
+      position: relative;
+      font-size: 0.95rem;
+      color: var(--text-sec);
+      line-height: 1.6;
+    }
+    .audience-list li + li { border-top: 1px solid rgba(26, 29, 42, 0.6); }
+    .audience-list li::before {
+      position: absolute;
+      left: 0;
+      top: 0.75rem;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+    .for-col .audience-list li::before {
+      content: '\2192';
+      color: var(--accent);
+    }
+    .not-col .audience-list li::before {
+      content: '\2715';
+      color: var(--red);
+    }
+
+    /* ═══ Bio Section ════════════════════════════════════════════ */
+    .bio {
+      padding: 6rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .bio-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .bio .label { display: block; margin-bottom: 0.75rem; }
+    .bio h2 {
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.75rem;
+    }
+    .bio p {
+      color: var(--text-sec);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      margin-bottom: 1.25rem;
+    }
+    .bio p:last-child { margin-bottom: 0; }
+    .bio strong { color: var(--text); font-weight: 600; }
+
+    /* ═══ Final CTA ══════════════════════════════════════════════ */
+    .final-cta {
+      padding: 6rem 0 7rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      position: relative;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: -20%;
+      width: 60%;
+      height: 140%;
+      transform: translateX(-50%);
+      background: radial-gradient(ellipse at center, rgba(0, 224, 200, 0.03) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .final-cta h2 {
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+    .final-cta .final-sub {
+      color: var(--text-sec);
+      font-size: 1.05rem;
+      margin-bottom: 3rem;
+    }
+    .final-cta .reg-card {
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    /* ═══ Footer ═════════════════════════════════════════════════ */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 0;
+      text-align: center;
+    }
+    footer p {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
+      line-height: 1.8;
+    }
+
+    /* ═══ Scroll Reveal ══════════════════════════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-d1 { transition-delay: 0.08s; }
+    .reveal-d2 { transition-delay: 0.16s; }
+    .reveal-d3 { transition-delay: 0.24s; }
+
+    /* ═══ Responsive ═════════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .hero-grid .reg-card { max-width: 420px; }
+      .systems-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      .audience-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.85rem; }
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+      .reg-card { padding: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ Nav ═══ -->
+  <nav id="nav">
+    <div class="container nav-inner">
+      <span class="nav-brand mono">CO-LIVING CONFIDENCE</span>
+      <a class="nav-cta register-link" target="_blank" rel="noopener">Register Free &rarr;</a>
+    </div>
+  </nav>
+
+  <!-- ═══ Hero ═══ -->
+  <section class="hero" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="label hero-label">Free Live Workshop &middot; Every Month</span>
+        <h1>
+          Fill Your Co-Living Rooms<br>in 30 Days.
+          <span class="accent-line">Systems-first. No landlord hustle.</span>
+        </h1>
+        <p class="hero-desc">
+          A free 75-minute live workshop for W2 earners &mdash; engineers, finance, healthcare &mdash; who want to build profitable co-living without quitting their day job. Learn the three named systems I used to fill 25+ rooms in Denver while working full-time as a software engineer.
+        </p>
+      </div>
+      <div class="reg-card" id="hero-card">
+        <span class="label">Next Live Session</span>
+        <div class="reg-date" id="hero-date">Loading&hellip;</div>
+        <div class="reg-meta" id="hero-time"></div>
+        <div class="reg-countdown" id="hero-countdown">&mdash;</div>
+        <a class="cta-btn register-link" target="_blank" rel="noopener">Reserve My Seat &rarr;</a>
+        <p class="reg-note">Free &middot; No credit card &middot; No pitch at the end</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Stats Strip ═══ -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="reveal">
+          <span class="stat-value">25+</span>
+          <span class="stat-label">Rooms Filled</span>
+        </div>
+        <div class="reveal reveal-d1">
+          <span class="stat-value">100%</span>
+          <span class="stat-label">While W2 Employed</span>
+        </div>
+        <div class="reveal reveal-d2">
+          <span class="stat-value">75</span>
+          <span class="stat-label">Minutes, No Fluff</span>
+        </div>
+        <div class="reveal reveal-d3">
+          <span class="stat-value">$0</span>
+          <span class="stat-label">Free, No Upsell</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Reframe + Systems ═══ -->
+  <section class="reframe">
+    <div class="container">
+      <div class="reframe-header reveal">
+        <h2>
+          You don't have a tenant problem.<br>
+          <span class="accent">You have a systems problem.</span>
+        </h2>
+        <p class="reframe-desc">
+          Most co-living operators spend weeks chasing leads, fielding bad-fit inquiries, and watching rooms sit empty. The issue isn't demand &mdash; it's the absence of repeatable systems for filtering tenants, writing listings that convert, and running showings that close. This workshop gives you all three.
+        </p>
+      </div>
+      <div class="systems-grid">
+        <div class="system-card reveal">
+          <span class="system-num">01</span>
+          <h3 class="system-name">The Qualifier&trade;</h3>
+          <p class="system-desc">
+            Stop wasting time on bad-fit tenants. A systematic filtering framework that identifies high-quality candidates before you ever schedule a showing &mdash; so you only spend time on people who'll actually sign.
+          </p>
+        </div>
+        <div class="system-card reveal reveal-d1">
+          <span class="system-num">02</span>
+          <h3 class="system-name">The Tenant Magnet&trade;</h3>
+          <p class="system-desc">
+            Your listing is your 24/7 salesperson. Learn how to write and structure co-living listings that attract qualified tenants and repel the wrong ones &mdash; reducing noise and increasing conversion.
+          </p>
+        </div>
+        <div class="system-card reveal reveal-d2">
+          <span class="system-num">03</span>
+          <h3 class="system-name">The Showing Script&trade;</h3>
+          <p class="system-desc">
+            Showings aren't tours &mdash; they're interviews. A structured conversation framework that builds tenant confidence while giving you the signal to make fast, accurate yes/no decisions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Audience ═══ -->
+  <section class="audience">
+    <div class="container">
+      <span class="label">Who This Is For</span>
+      <h2>Is this workshop for you?</h2>
+      <div class="audience-grid">
+        <div class="audience-col for-col reveal">
+          <h3>Built for you if&hellip;</h3>
+          <ul class="audience-list">
+            <li>You're a W2 earner &mdash; engineer, tech, finance, healthcare &mdash; exploring co-living on the side</li>
+            <li>You have (or are buying) a property and need to fill rooms predictably</li>
+            <li>You're tired of guessing and want a repeatable, systems-driven approach</li>
+            <li>You want a rental operation that runs alongside your career, not instead of it</li>
+          </ul>
+        </div>
+        <div class="audience-col not-col reveal reveal-d1">
+          <h3>Not the right fit if&hellip;</h3>
+          <ul class="audience-list">
+            <li>You're looking for a get-rich-quick real estate scheme</li>
+            <li>You want someone to manage your property for you</li>
+            <li>You aren't willing to invest the effort to build and run systems</li>
+            <li>You're only interested in traditional single-family rentals</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Bio ═══ -->
+  <section class="bio">
+    <div class="container">
+      <div class="bio-inner reveal">
+        <span class="label">Your Instructor</span>
+        <h2>Meet Bruce</h2>
+        <p>
+          I'm a <strong>software engineer in Denver</strong> and a co-living operator. I started in a <strong>60-square-foot basement room</strong> with no connections, no real estate background, and a full-time W2 job I wasn't planning to leave.
+        </p>
+        <p>
+          I filled <strong>25+ rooms</strong> by treating co-living like a systems problem, not a hustle. I built frameworks for qualifying tenants, writing listings, and running showings &mdash; the same three systems I teach in this workshop.
+        </p>
+        <p>
+          I'm not a guru. I'm not selling a course. I'm a working engineer who figured out how to build a profitable co-living operation on the side, and I want to show other W2 earners exactly how.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Final CTA ═══ -->
+  <section class="final-cta" id="final-cta">
+    <div class="container">
+      <div class="reveal">
+        <h2>Your next full room is<br><span class="accent">30 days away.</span></h2>
+        <p class="final-sub">Join the next live session. Learn all three systems. Start filling rooms.</p>
+      </div>
+      <div class="reg-card reveal reveal-d1">
+        <span class="label">Next Live Session</span>
+        <div class="reg-date" id="footer-date">Loading&hellip;</div>
+        <div class="reg-meta" id="footer-time"></div>
+        <div class="reg-countdown" id="footer-countdown">&mdash;</div>
+        <a class="cta-btn register-link" target="_blank" rel="noopener">Reserve My Seat &rarr;</a>
+        <p class="reg-note">Free &middot; No credit card &middot; No pitch at the end</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Footer ═══ -->
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="footer-year"></span> Bruce Tieu. All rights reserved.</p>
+      <p>The Qualifier&trade;, The Tenant Magnet&trade;, and The Showing Script&trade; are trademarks of Bruce Tieu.</p>
+    </div>
+  </footer>
+
+<script>
+// ╔══════════════════════════════════════════════════════════════════╗
+// ║  CONFIGURATION — Edit these values to update the page           ║
+// ║                                                                 ║
+// ║  The page auto-calculates the next session date from these      ║
+// ║  values. No manual date updates needed — it rolls forward       ║
+// ║  each month and handles year boundaries automatically.          ║
+// ╚══════════════════════════════════════════════════════════════════╝
+
+const CONFIG = {
+  // ── Zoom Registration ─────────────────────────────────────────
+  // Replace with your Zoom Webinar registration URL.
+  // Zoom handles signup, email confirmations, and reminders.
+  ZOOM_URL: "https://us06web.zoom.us/webinar/register/REPLACE_WITH_YOUR_WEBINAR_ID",
+
+  // ── Recurring Schedule ────────────────────────────────────────
+  WEEKDAY: 3,            // 0=Sun 1=Mon 2=Tue 3=Wed 4=Thu 5=Fri 6=Sat
+  WEEK_OF_MONTH: 1,      // 1=first, 2=second, 3=third, 4=fourth
+  HOUR: 18,              // 24-hour format, in TIMEZONE below
+  MINUTE: 0,
+  TIMEZONE: "America/Denver",
+  TIMEZONE_LABEL: "Mountain Time",
+  DURATION_MINUTES: 75,
+};
+
+// ═══ Date Calculation ═══════════════════════════════════════════
+
+function getNthWeekdayOfMonth(year, month, weekday, n) {
+  var first = new Date(year, month, 1);
+  var offset = (weekday - first.getDay() + 7) % 7;
+  return new Date(year, month, 1 + offset + (n - 1) * 7);
+}
+
+function toISODate(d) {
+  return d.getFullYear() + "-" +
+    String(d.getMonth() + 1).padStart(2, "0") + "-" +
+    String(d.getDate()).padStart(2, "0");
+}
+
+function getNextSession() {
+  var todayStr = new Date().toLocaleDateString("en-CA", { timeZone: CONFIG.TIMEZONE });
+  var parts = todayStr.split("-").map(Number);
+  var todayYear = parts[0], todayMonth = parts[1] - 1;
+
+  for (var i = 0; i < 3; i++) {
+    var month = todayMonth + i;
+    var year = todayYear;
+    while (month > 11) { month -= 12; year++; }
+
+    var session = getNthWeekdayOfMonth(year, month, CONFIG.WEEKDAY, CONFIG.WEEK_OF_MONTH);
+
+    if (toISODate(session) >= todayStr) {
+      return session;
+    }
+  }
+  return getNthWeekdayOfMonth(todayYear + 1, 0, CONFIG.WEEKDAY, CONFIG.WEEK_OF_MONTH);
+}
+
+function getDaysUntil(session) {
+  var todayStr = new Date().toLocaleDateString("en-CA", { timeZone: CONFIG.TIMEZONE });
+  var today = new Date(todayStr + "T00:00:00");
+  var target = new Date(toISODate(session) + "T00:00:00");
+  return Math.round((target - today) / (1000 * 60 * 60 * 24));
+}
+
+function formatTime(hour, minute) {
+  var period = hour >= 12 ? "PM" : "AM";
+  var h = hour > 12 ? hour - 12 : (hour === 0 ? 12 : hour);
+  return h + ":" + String(minute).padStart(2, "0") + " " + period;
+}
+
+function formatCountdown(days) {
+  if (days === 0) return "Today";
+  if (days === 1) return "Tomorrow";
+  return "in " + days + " days";
+}
+
+// ═══ DOM Updates ════════════════════════════════════════════════
+
+document.addEventListener("DOMContentLoaded", function () {
+  var session = getNextSession();
+  var dateStr = session.toLocaleDateString("en-US", {
+    weekday: "long", month: "long", day: "numeric", year: "numeric"
+  });
+  var timeStr = formatTime(CONFIG.HOUR, CONFIG.MINUTE) + " " + CONFIG.TIMEZONE_LABEL + " · Zoom · " + CONFIG.DURATION_MINUTES + " min";
+  var days = getDaysUntil(session);
+  var countdownStr = formatCountdown(days);
+
+  document.getElementById("hero-date").textContent = dateStr;
+  document.getElementById("hero-time").textContent = timeStr;
+  document.getElementById("hero-countdown").textContent = countdownStr;
+  document.getElementById("footer-date").textContent = dateStr;
+  document.getElementById("footer-time").textContent = timeStr;
+  document.getElementById("footer-countdown").textContent = countdownStr;
+  document.getElementById("footer-year").textContent = new Date().getFullYear();
+
+  document.querySelectorAll(".register-link").forEach(function (el) {
+    el.href = CONFIG.ZOOM_URL;
+  });
+
+  // ── Scroll Reveal ───────────────────────────────────────────
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -32px 0px" });
+
+  document.querySelectorAll(".reveal").forEach(function (el) {
+    observer.observe(el);
+  });
+
+  // ── Nav Scroll Effect ───────────────────────────────────────
+  var nav = document.getElementById("nav");
+  var scrolled = false;
+  window.addEventListener("scroll", function () {
+    var shouldBeScrolled = window.scrollY > 40;
+    if (shouldBeScrolled !== scrolled) {
+      scrolled = shouldBeScrolled;
+      nav.classList.toggle("scrolled", scrolled);
+    }
+  }, { passive: true });
+});
+</script>
+
+</body>
+</html>
