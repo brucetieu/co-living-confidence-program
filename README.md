@@ -1,4 +1,4 @@
-# The Co-Living Operator Confidence Program
+# The Coliving Operator Confidence Program
 
 Free monthly workshop registration page. Static single-page site deployed on Netlify.
 
